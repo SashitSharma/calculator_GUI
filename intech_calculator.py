@@ -1,11 +1,10 @@
-
 import tkinter as tk
 import math
 import numpy as np
 import winsound
 
-fNumber1 = fNumber2 = None
 
+fNumber1 = fNumber2 =  None
 
 def get_digit(digit):
     current = result_label["text"]
@@ -15,19 +14,16 @@ def get_digit(digit):
     result_label.config(text=new)
     winsound.Beep(300, 100)
 
-
 def backspace():
     current = result_label["text"]
     new = current[:-1]
     result_label.config(text=new)
     winsound.Beep(500, 100)
 
-
 def clear():
     result_label.config(text=" ")
     equation_label.config(text=" ")
     winsound.Beep(500, 100)
-
 
 def get_operator(op):
     global fNumber1, operator
@@ -36,7 +32,6 @@ def get_operator(op):
     result_label.config(text="")
     equation_label.config(text=f"{fNumber1} {operator}")
     winsound.Beep(500, 100)
-
 
 def calculate_sin():
     try:
@@ -51,7 +46,6 @@ def calculate_sin():
         result_label.config(text="Invalid input")
         winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
 
-
 def calculate_cos():
     try:
         global fNumber1, operator
@@ -64,7 +58,6 @@ def calculate_cos():
     except ValueError:
         result_label.config(text="Invalid input")
         winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
-
 
 def get_result():
     global fNumber1, fNumber2, operator
