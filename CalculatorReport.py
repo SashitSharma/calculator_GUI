@@ -2,7 +2,6 @@ import tkinter as tk
 import math
 import winsound
 
-
 class Calculator:
     def __init__(self, result_label=None):
         self.fNumber1 = None
@@ -125,6 +124,29 @@ class Calculator:
             self.result_label.config(text="Invalid Input")
             winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
 
+
+    def generate_html_report(self, number1, number2, operator, result):
+        # Format the data as HTML
+        html_content = f"""
+        <!DOCTYPE html>
+        <html>
+        <head>
+            <title>Calculator Report</title>
+        </head>
+        <body>
+            <h1>Calculator Report</h1>
+            <p>Number 1: {number1}</p>
+            <p>Number 2: {number2}</p>
+            <p>Operator: {operator}</p>
+            <p>Result: {result}</p>
+        </body>
+        </html>
+        """
+
+        # Write the HTML to a file
+        with open('calculator_report.html', 'w') as file:
+            file.write(html_content)
+
     def get_result(self):
         if self.operator == "√":
             try:
@@ -176,10 +198,16 @@ class Calculator:
                 self.result_label.config(text=str(round(self.fNumber1 / self.fNumber2, 5)))
                 self.equation_label.config(text=f"{self.fNumber1} / {self.fNumber2} =")
 
+
+
         self.operator = None
 
-    def run(self):
-        self.win.mainloop()
+        # Generate and save the HTML report
+        number1 = self.fNumber1
+        number2 = self.fNumber2
+        operator = self.operator
+        result = self.result_label["text"]
+        self.generate_html_report(number1, number2, operator, result)
 
 if __name__ == "__main__":
     calculator = Calculator()
