@@ -3,7 +3,7 @@ from Calculator import Calculator
 import tkinter as tk
 
 
-class TestCalc(unittest.TestCase):
+class TestCalcu(unittest.TestCase):
     def test_calculate_addition(self):
         root = tk.Tk()
         result_label = tk.Label(root)
