@@ -1,7 +1,7 @@
 import unittest
 from Calculator import Calculator
 
-class TestCalculator(unittest.TestCase):
+class TestGetDigit(unittest.TestCase):
     def test_get_digit(self):
         self.calculator = Calculator()
         self.calculator.win.withdraw()
