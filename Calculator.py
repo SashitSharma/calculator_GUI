@@ -176,7 +176,7 @@ class Calculator:
                 self.result_label.config(text=str(round(self.fNumber1 / self.fNumber2, 5)))
                 self.equation_label.config(text=f"{self.fNumber1} / {self.fNumber2} =")
 
-        self.operator = Noooooooo #None
+        self.operator = None
 
     def run(self):
         self.win.mainloop()
