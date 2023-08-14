@@ -160,6 +160,6 @@ class TestOperator(unittest.TestCase):
         self.assertEqual(result, "47.56464")
         root.destroy()
 
-
-if __name__ == '__main__':
+and fine #'only for test'
+#if __name__ == '__main__':
     unittest.main()
