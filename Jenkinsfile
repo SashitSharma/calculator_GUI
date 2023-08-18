@@ -1,24 +1,30 @@
-#!groovy
-
 pipeline {
     agent any
 
-    tools {
-        maven "3.9.4" // You need to add a maven with name "3.6.0" in the Global Tools Configuration page
-    }
-
     stages {
-        stage("Build") {
+        stage('Build') {
             steps {
-                sh "mvn -version"
-                sh "mvn clean install"
+                echo 'Build Code'
+            }
+        }
+
+        stage('Test') {
+            steps {
+                echo 'Test Code'
+            }
+        }
+
+        stage('Deploy') {
+            steps {
+                echo 'Deploy code'
             }
         }
     }
-
-    post {
-        always {
-            cleanWs()
+    post
+    {
+        always
+        {
+            emailext body: 'Summary', subject: 'Pipeline Status', to: 'SashitSHarma@gmail.com'
         }
     }
 }
