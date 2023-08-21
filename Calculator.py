@@ -178,7 +178,7 @@ class Calculator:
 
         self.operator = None
 
-    def run(self):
+    def runmaya(self):
         self.win.mainloop()
 
 if __name__ == "__main__":
