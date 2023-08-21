@@ -1,6 +1,5 @@
 import tkinter as tk
 import math
-import winsound
 
 
 class Calculator:
@@ -112,7 +111,6 @@ class Calculator:
             self.equation_label.config(text=f"sin({self.fNumber1}) =")
         except ValueError:
             self.result_label.config(text="Invalid Input")
-            winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
 
     def calculate_cos(self):
         try:
@@ -123,7 +121,6 @@ class Calculator:
             self.equation_label.config(text=f"cos({self.fNumber1}) =")
         except ValueError:
             self.result_label.config(text="Invalid Input")
-            winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
 
     def get_result(self):
         if self.operator == "√":
@@ -134,7 +131,6 @@ class Calculator:
             except ValueError:
                 self.result_label.config(text="Error")
                 self.equation_label.config(text="")
-                winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
 
         elif self.operator == "∛":
             try:
@@ -144,7 +140,6 @@ class Calculator:
             except ValueError:
                 self.result_label.config(text="Error")
                 self.equation_label.config(text="")
-                winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
 
         elif self.operator == "+":
             self.fNumber2 = float(self.result_label["text"])
@@ -171,7 +166,6 @@ class Calculator:
             if self.fNumber2 == 0:
                 self.result_label.config(text="Error")
                 self.equation_label.config(text="")
-                winsound.PlaySound("SystemHand", winsound.SND_ALIAS)
             else:
                 self.result_label.config(text=str(round(self.fNumber1 / self.fNumber2, 5)))
                 self.equation_label.config(text=f"{self.fNumber1} / {self.fNumber2} =")
