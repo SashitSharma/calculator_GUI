@@ -1,5 +1,11 @@
 import tkinter as tk
 import math
+import sys
+import os
+
+if os.environ.get('DISPLAY','') == '':
+    print('no display found. Using :0.0')
+    os.environ.__setitem__('DISPLAY', ':0.0')
 
 class Calculator:
     def __init__(self, result_label=None):
