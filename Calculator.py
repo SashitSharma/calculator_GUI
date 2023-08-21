@@ -1,5 +1,7 @@
 import tkinter as tk
 import math
+import matplotlib
+matplotlib.use('Agg')
 
 
 class Calculator:
