@@ -161,7 +161,7 @@ class Calculator:
             self.result_label.config(text=str(self.fNumber1 * self.fNumber2))
             self.equation_label.config(text=f"{self.fNumber1} * {self.fNumber2} =")
 
-        elif self.operator == "x^y":
+        elif self.operator == "x^y"::   #the error is here
             self.fNumber2 = float(self.result_label["text"])
             self.result_label.config(text=str(self.fNumber1 ** self.fNumber2))
             self.equation_label.config(text=f"{self.fNumber1} ^ {self.fNumber2} =")
@@ -178,7 +178,7 @@ class Calculator:
 
         self.operator = None
 
-    def runmaya(self):
+    def run(self):
         self.win.mainloop()
 
 if __name__ == "__main__":
