@@ -1,8 +1,5 @@
 import tkinter as tk
 import math
-import os
-os.system("xvfb :1 -screen 0 720x720x16 &")
-os.environ["DISPLAY"] = ":1.0"
 
 class Calculator:
     def __init__(self, result_label=None):
