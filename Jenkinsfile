@@ -1,17 +1,38 @@
+for maven:
 pipeline {
     agent any
-
+    
+    tools {
+        maven '3.6.3'
+    }
+    
     stages {
-        stage('Build') {
+      stage('Test') {
             steps {
-                //sh 'pip install -e ./PiCarProject/ '
-                sh 'python3 *.py'
+                script {
+                    // Compile your code here
+                    sh 'mvn test' // Adjust the command based on your build tool
+                }
             }
         }
-        stage('Test') {
+        
+        stage('Build') {
             steps {
-                sh 'python3 -m pytest *.py'
+                script {
+                    // Compile your code here
+                    sh 'mvn clean compile' // Adjust the command based on your build tool
+                }
             }
         }
     }
+    
+    post {
+        success {
+            echo 'Build successful!'
+        }
+        failure {
+            echo 'Build failed. Check for compilation errors.'
+        }
+    }
 }
+
