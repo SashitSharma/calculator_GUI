@@ -1,4 +1,3 @@
-for maven:
 pipeline {
     agent any
     
